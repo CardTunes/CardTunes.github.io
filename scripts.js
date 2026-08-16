@@ -141,6 +141,19 @@ const container = document.getElementById('playList');
 //     index = index + 1;
 // });
 
+const formatDuration = (audioElement) => {
+  if (isNaN(audioElement.duration)) return "00:00";
+
+  const minutes = Math.floor(audioElement.duration / 60);
+  const seconds = Math.floor(audioElement.duration % 60);
+
+  const paddedMinutes = String(minutes).padStart(2, '0');
+  const paddedSeconds = String(seconds).padStart(2, '0');
+
+  return `${paddedMinutes}:${paddedSeconds}`;
+};
+
+
 songList.forEach(song => {
     const audio = new Audio(song.url);
 
@@ -151,7 +164,7 @@ songList.forEach(song => {
     // addTd(row, leftSpan, "50%");
 
     const counter = document.createElement('span');
-    addTd(row, counter, "10px");
+    addTd(row, counter, "20px");
     counter.textContent = index;
 
 
@@ -185,12 +198,18 @@ songList.forEach(song => {
         progressBar.style.width = percentage + '%';
     });
 
-    // audio.addEventListener('loadedmetadata', () => {
-    //     const time = document.createElement('span');
-    //     time.textContent = audio.duration;
-    //     container.appendChild(time);
-    //   //  console.log("Audio duration:", audio.duration); // Returns the actual duration in seconds
-    // });
+    const emptySpan2 =  document.createElement('span');
+    addTd(row, emptySpan2, "10px");
+
+     const time = document.createElement('span');
+     addTd(row, time, "10px");
+
+    audio.addEventListener('loadedmetadata', () => {
+        time.textContent = formatDuration(audio);
+        //const time = document.createElement('span');
+
+      //  console.log("Audio duration:", audio.duration); // Returns the actual duration in seconds
+    });
 
     index = index + 1;
 });
