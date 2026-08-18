@@ -31,13 +31,16 @@ class Song {
 }
 
 const songList = [];
-songList.push(new Song("Estatê", "Estate.mp3"));
 songList.push(new Song("Gloria's Step", "Gloria's Step.mp3"));
-songList.push(new Song("I Mean You", "I Mean You.mp3"));
-
-songList.push(new Song("Infant Eyes", "Infant Eyes.mp3"));
 songList.push(new Song("River Man", "River Man.mp3"));
+
+songList.push(new Song("Estatê", "Estate.mp3"));
 songList.push(new Song("Unrequited", "Unrequited.mp3"));
+
+songList.push(new Song("I Mean You", "I Mean You.mp3"));
+songList.push(new Song("Infant Eyes", "Infant Eyes.mp3"));
+
+
 
 
 // const addButton = (container, song, audio) => {
@@ -164,7 +167,7 @@ songList.forEach(song => {
     // addTd(row, leftSpan, "50%");
 
     const counter = document.createElement('span');
-    addTd(row, counter, "20px");
+    addTd(row, counter);
     counter.textContent = index;
 
 
@@ -178,12 +181,13 @@ songList.forEach(song => {
 
     addTd(row, label);
 
-    const emptySpan =  document.createElement('span');
-    addTd(row, emptySpan, "10px");
+    // const emptySpan =  document.createElement('span');
+    // addTd(row, emptySpan, "10px");
 
     const progressContainer = document.createElement('div');
     progressContainer.classList.add('progress-container');
-    progressTd = addTd(row, progressContainer, "280px");
+    progressTd = addTd(row, progressContainer);
+    progressTd.classList.add('progress-td');
 
 
     const progressBar = document.createElement('div');
@@ -198,11 +202,11 @@ songList.forEach(song => {
         progressBar.style.width = percentage + '%';
     });
 
-    const emptySpan2 =  document.createElement('span');
-    addTd(row, emptySpan2, "10px");
+    // const emptySpan2 =  document.createElement('span');
+    // addTd(row, emptySpan2, "10px");
 
      const time = document.createElement('span');
-     addTd(row, time, "10px");
+     addTd(row, time);
 
     audio.addEventListener('loadedmetadata', () => {
         time.textContent = formatDuration(audio);

@@ -39,8 +39,12 @@ body {
     height:100vh;
     font-family: Monaco;
 
-    
+  
 }   
+
+
+
+
 
 .header {
   height:50px;
@@ -74,19 +78,60 @@ body {
   text-decoration: none;
 }
 .main {
-  position:relative;
+  /* position:relative; */
     display: flex;    
+    flex-direction: column; 
+      gap: 10px;
+}
+.flex-child {
+  width: 100%; /* Spans the full width of the phone screen */
+}
+.image-wrapper {
+  width: 100%; /* Stretches the container across the phone screen */
 }
 
-.main > * {
-  flex:1;
-}
-.hero {
-   position: relative;
-  display: flex;    
-  /* justify-content: center; */
+/* .image-wrapper img {
 
+} */
+
+@media (min-width: 768px) {
+  .flex-container {
+    flex-direction: row; /* Aligns items side-by-side */
+       justify-content: space-between; 
+           
+    flex-wrap: wrap;     
+  }
+
+  .flex-child {
+    flex: 1; /* Makes both divs occupy equal width */
+  }
+
+    .image-wrapper {
+      flex: 0 0 60%; /* Strictly caps the container at exactly 50% width */
+      max-width: 60%; /* Hard limit to prevent expanding */
+    }
+
+     .playlist-wrapper {
+       flex: 0 0 35%;
+        max-width: 35%;
+    }
+
+     .players-wrapper {
+      flex: 0 0 60%; /* Strictly caps the container at exactly 50% width */
+      max-width: 60%; /* Hard limit to prevent expanding */
+    }
+
+     .description-wrapper {
+       flex: 0 0 40%;
+        max-width: 40%;
+    }
 }
+
+/* .hero {
+   width: 100%;
+
+} */
+
 .top-left-cover {
 
    background-image: linear-gradient(
@@ -103,10 +148,14 @@ body {
  left:0;
   z-index: 100;
 }
-.main img {
-  position: absolute;
+.image-wrapper img {
+    width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; /* Prevents distorting the image */
+  /* position: absolute; */
   /* width:80vw; */
-  width:1000px;
+  /* width:1000px; */
   height:auto;
   display: block;
   margin: 0; 
@@ -120,12 +169,8 @@ body {
   -webkit-mask-image: linear-gradient(to top, transparent, black 20%, black 80%, transparent),
    linear-gradient(to right, transparent, black 20%, black 80%, transparent);
 
-
  -webkit-mask-composite: destination-in; 
-
-
-   object-fit: cover;
-    /* mask: radial-gradient(circle 60px at top left, #0000 98%, #000) top left; */
+ object-fit: cover;
 
   clip-path: polygon(
     0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%,       /* Outer frame loop */
@@ -192,9 +237,13 @@ body {
    overflow: visible;
 }
 
-.right-content {
-  margin-top:40px;  
-  margin-right:10px;
+.description-wrapper {
+    width: 100%;
+}
+.playlist-wrapper {
+  width: 100%; 
+   /* margin-top:40px;  
+  margin-right:10px; */
 
 }
 
@@ -211,7 +260,7 @@ body {
     height:50px;
 }
 .description1 {
-  position:relative;
+  /* position:relative; */
   /* background-color: rgb(69,70,79, 10); */
   flex:1;
   padding: 15px;
@@ -222,7 +271,7 @@ body {
   margin-left:-150px;
 }
 .description2 {
-  position:relative;
+  /* position:relative; */
   /* background-color: rgb(69,70,79, 10); */
   flex:1;
   padding: 15px;
@@ -257,6 +306,10 @@ body {
 
 }
 
+.players-wrapper {
+  color:white
+}
+
 #players {
       border: 2px solid #333;
     border-radius: 10px;
@@ -270,16 +323,19 @@ body {
 .player-btn:hover {
   color: #ff6b81;
 }
-
+.progress-td {
+  width:80%;
+}
 .progress-container {
   flex-grow: 1;
-  min-width: 300px;
+  /* min-width: 300px; */
   height: 6px;
   /* background-color: #4f4f5a; */
   background-color: white;
   border-radius: 3px;
   overflow: hidden;
   position: relative;
+
 }
 
 .progress-fill {
@@ -306,6 +362,7 @@ body {
 }
 
 #playList {
+  table-layout: fixed;
      border-collapse: collapse;
     border-spacing: 0 15px;
     margin:auto;

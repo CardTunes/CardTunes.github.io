@@ -1,0 +1,248 @@
+:root {
+  --primary-color: #45464F;
+  --secondary-color: #45464F;
+  --accent-color: white;
+  --gradient-color: #e29a2d;
+  --shadow-color: hsl(234, 72%, 34%);
+}
+
+body {
+  margin: 0 auto;
+    padding: 0;
+
+    color:white;
+    background-color: #45464F;
+    background-image: linear-gradient(var(--gradient-color), var(--primary-color));
+     background-attachment: fixed;
+    background-repeat: no-repeat;
+    width:100vw;
+    height:100vh;
+    font-family: Monaco;
+    position: relative;
+}   
+
+.main-container {
+  display: flex;
+  flex-wrap: wrap; 
+  width: 100%;
+}
+.flex-item {
+  width: 50%;
+  /* flex: 0 0 50%;    */
+  box-sizing: border-box; 
+}
+
+/* 
+.flex-item:nth-child(n+3) {
+  margin-top: -30px;    
+  position: relative;  
+  z-index: 2;        */ */
+
+
+.hero-wrapper {
+  /* position: static; */
+  width: 100%;
+  /* height: 100%; */
+  position: relative;
+}
+
+.hero-wrapper img {
+  height: auto;  /* Lets the image scale naturally on desktop */
+  max-width: 100%;
+  display:block;
+
+  mask-composite: intersect;
+  mask-image: linear-gradient(to top, transparent, black 20%, black 80%, transparent),
+  linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+
+  -webkit-mask-image: linear-gradient(to top, transparent, black 20%, black 80%, transparent),
+  linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+
+  }
+
+  
+@media (min-width: 768px) {
+  .hero-wrapper {
+    width:55%;
+    position: relative;
+    /* position: absolute;
+    top: 0;
+    left: 0;
+     width: 55%;
+    height: auto; */
+  }
+
+  @media (orientation: portrait) {
+  /* CSS rules for vertical, upright screens */
+}
+
+@media (orientation: landscape) {
+  /* CSS rules for horizontal, wide screens */
+}
+
+.caption {
+  position: absolute;
+  /* backdrop-filter: blur(4px); */
+  /* padding: 20px 40px; */
+   z-index: 500;
+  /* display: inline-block; */
+  border: 1px solid black;
+  /* top:7%;
+  left:6%; */
+  width: 100%;
+  height: 100%; 
+  /* width:70%;
+  height: 13%;  */
+  /* aspect-ratio: 11 / 2; */
+  /* min-height: 0; */
+  z-index: 500;
+ top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+   /* resize: both; */
+}
+
+.curve-svg {
+  /* width: 100%; */
+  /* max-width: 500px; */
+  /* overflow: visible; */
+    /* width: 100%;
+  height: 100%; */
+  /* display: block; */
+  /* height:auto; */
+}
+
+.curve-svg text {
+  /* font-family: Monaco; */
+   opacity: 1 !important; 
+  fill: #ffffff; /* Bright white text */
+  /* font-size: 32px; */
+  font-weight: bold;
+  font-family: sans-serif;
+  /* letter-spacing: 2px; */
+   letter-spacing: -0.03em;
+    text-shadow: 3px 3px 4px rgba(153, 72, 69, 0.6); 
+  /* filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.9));  */
+  /* Heavy shadow */
+}
+
+.caption-text {
+
+}
+  .playlist-wrapper {
+    width:40%;
+    position:absolute;
+    top:20px;
+    right:15px;
+  }
+
+  .sub-header {
+     font-size:20px;
+     text-align: center;
+  }
+  .players-wrapper {
+    position:absolute;
+      bottom:10px;
+      left:10px;
+  }
+  .description-wrapper {
+    position:absolute;
+     width:60%;
+    bottom:20px;
+    right:0;
+  }
+  /* .flex-container {
+    flex-direction: column;
+    justify-content: space-between; 
+           
+   
+  } */
+
+
+.description1 {
+  flex:1;
+  padding: 15px;
+   border-radius: 100vw; 
+    margin-bottom:50px; 
+  margin-left:-150px;
+}
+.description2 {
+  flex:1;
+  padding: 15px;
+  margin-bottom:40px; 
+  margin-left:-150px;
+}
+
+.description-text {
+  line-height: 1.5;
+  text-align: center;
+  /* font-family: 'Open Sans', sans-serif;  */
+  font-size:24px;
+
+  position: relative; 
+  z-index:300;
+    color: white;
+
+  color: #ffffff;
+  /* Soft, dark glow that fills in gaps of busy backgrounds */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 
+               0 4px 12px rgba(0, 0, 0, 0.4);
+  font-weight: 300; /* Bolder fonts are inherently easier to read */
+}
+}
+
+.players-wrapper {
+  color:white
+}
+
+#players {
+      border: 2px solid #333;
+    border-radius: 10px;
+}
+
+.player-btn {
+  /* color:#994845; */
+  color:white;
+}
+
+.player-btn:hover {
+  color: #ff6b81;
+}
+.progress-td {
+  width:80%;
+}
+.progress-container {
+  flex-grow: 1;
+  height: 6px;
+  background-color: white;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background-color: #2ed573;
+}
+
+#playList {
+  table-layout: fixed;
+     border-collapse: collapse;
+    border-spacing: 0 15px;
+    margin:auto;
+     font-family: Monaco;
+    /* width:100%; */
+}
+
+#playList tr {
+    border-bottom: 1px solid var(--accent-color);;
+    height:50px;
+}
+
+#playList  td {
+     white-space: nowrap; 
+}
+
