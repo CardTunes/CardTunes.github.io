@@ -1,0 +1,38 @@
+:root {
+
+}
+
+html {
+    font-family: sans-serif;
+}
+
+div.parent {
+   container-type: inline-size;
+   position:relative;
+}
+
+
+div.child {
+  position:absolute;
+  
+  font-size: 5cqi;
+      border:1px solid black;
+   
+      /* font-size: clamp(14px, 5cqi, 36px); */
+  /* width:100%; */
+}
+  @media (orientation: portrait) {
+      div.parent {
+      width:100%;
+    }
+  }
+  @media (orientation: landscape) {
+    div.parent {
+      width:50%;
+    }
+  }
+  @media screen and (min-width: 1024px) {
+
+    
+  }
+
