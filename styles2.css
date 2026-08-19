@@ -35,6 +35,7 @@ body {
   display:flex;
   flex-direction: column;
   flex-wrap: wrap; 
+/* justify-content: space-between; */
 
   position: relative;
   /* height:100%; */
@@ -45,9 +46,11 @@ body {
 
     display: flex;
   flex-direction:  row;
-  align-items: flex-start;
+  align-items: start;
    aspect-ratio: 4 / 1;
    width: 100%;
+
+   border:1px solid white;
 }
 
 img.hero {
@@ -125,29 +128,25 @@ img.hero {
 
   .playlist-wrapper {
     flex:1;
+padding: 0 3em;
+    /* padding-bottom: 3%; */
     /* position:absolute; */
-    top:20px;
-    right:15px;
+
+    /* top:20px;
+    right:15px; */
   }
 
-  .sub-header {
+  /* .sub-header {
      font-size:20px;
      text-align: center;
-  }
-  .players-wrapper {
-    /* position:absolute; */
-      flex:1;
-      margin-top: auto;
-      bottom:10px;
-      left:10px;
-  }
-
+  } */
+ 
 .progress-td {
   width:80%;
 }
 .progress-container {
   flex-grow: 1;
-  height: 6px;
+  height: 0.7em;
   background-color: white;
   border-radius: 3px;
   overflow: hidden;
@@ -164,15 +163,16 @@ img.hero {
 #playList {
   table-layout: fixed;
      border-collapse: collapse;
-    border-spacing: 0 15px;
+    border-spacing: 0 1em;
     margin:auto;
      font-family: Monaco;
+     
     /* width:100%; */
 }
 
 #playList tr {
     border-bottom: 1px solid var(--accent-color);;
-    height:50px;
+    height:3em;
 }
 
 #playList  td {
@@ -209,23 +209,14 @@ img.hero {
      flex-direction: column;
 }
 
+ .players-wrapper {
+    /* position:absolute; */
+      flex:1;
+      margin-top: auto;
+      bottom:10px;
+      left:10px;
+  }
 
-
-.players-wrapper {
-  position: relative;
-
-    /* flex: 50%; */
-  box-sizing: border-box;
-  /* flex: 0 0 25%; */
-  width:25%;
-  color:white
-
-}
-
-/* .players-abs {
-  position: absolute;
-  bottom:0;
-} */
 #players {
       border: 2px solid #333;
     border-radius: 10px;
