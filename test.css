@@ -1,0 +1,39 @@
+.container {
+    display: grid;
+grid-template-columns: max-content max-content minmax(0, 1fr) 2fr max-content;
+  grid-template-rows: repeat(2, minmax(0, 1fr)); /* Fixes the height lock */
+  
+         aspect-ratio: 16 / 9;
+           width: 100%;
+            height: auto; 
+    background-color: green;
+}
+
+
+.cell {
+  background-color: #fff;
+  /* padding: 10px; */
+  /* Prevents text from breaking the column widths */
+  overflow-wrap: break-word; 
+  word-break: break-all;
+  height:1em;
+
+   font-size: 1.2vw;   
+  padding: 0.8vw 1.2vw; 
+}
+
+.progress-container {
+  flex-grow: 1;
+  height: 0.7em;
+  background-color: gray;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background-color: #2ed573;
+}

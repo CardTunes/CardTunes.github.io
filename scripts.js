@@ -85,7 +85,7 @@ const addButton = (tr, song, audio) => {
    //  tr.appendChild(td);
 
     const button = document.createElement('playButton');
-    addTd(tr, button, "20px");
+    addTd(tr, button);
    // td.appendChild(button);
     
     button.innerHTML = "▶";  
@@ -173,16 +173,11 @@ songList.forEach(song => {
 
     addButton(row, song, audio);
     
-  //  const labelTd = document.createElement('td');
-   // row.appendChild(labelTd);
     const label = document.createElement('span');
     label.textContent = song.label;
-    //labelTd.appendChild(label);
+    label.classList.add('song-title');
 
     addTd(row, label);
-
-    // const emptySpan =  document.createElement('span');
-    // addTd(row, emptySpan, "10px");
 
     const progressContainer = document.createElement('div');
     progressContainer.classList.add('progress-container');
@@ -206,6 +201,7 @@ songList.forEach(song => {
     // addTd(row, emptySpan2, "10px");
 
      const time = document.createElement('span');
+     time.classList.add('song-time');
      addTd(row, time);
 
     audio.addEventListener('loadedmetadata', () => {

@@ -25,6 +25,12 @@ body {
 
     font-family: Menlo, Monaco, 'Courier New', monospace;
     position: relative;
+
+    /* display:flex;
+    flex-direction: column;
+    flex-wrap: wrap; 
+min-height: 100vh;  */
+
 }   
 
 .header {
@@ -35,11 +41,10 @@ body {
   display:flex;
   flex-direction: column;
   flex-wrap: wrap; 
-/* justify-content: space-between; */
-
+  row-gap: 2em;
   position: relative;
-  /* height:100%; */
-   min-height: 100vh; 
+
+  min-height: 100vh;
 
 }
 .top-row {
@@ -50,7 +55,7 @@ body {
    aspect-ratio: 4 / 1;
    width: 100%;
 
-   border:1px solid white;
+   border:1px solid   white;
 }
 
 img.hero {
@@ -128,25 +133,28 @@ img.hero {
 
   .playlist-wrapper {
     flex:1;
-padding: 0 3em;
-    /* padding-bottom: 3%; */
-    /* position:absolute; */
-
-    /* top:20px;
-    right:15px; */
+    padding: 0 3em;
+      font-size: 1.5vw;  
   }
 
-  /* .sub-header {
-     font-size:20px;
-     text-align: center;
-  } */
+  .player-btn {
+    padding: 0 0.7em 0.2em 0.7em;
+  }
+
+  .song-title {
+      padding: 0 0.7em 0 0;
+  }
+  .song-time {
+      padding: 0 0 0 0.7em;
+  }
+
  
 .progress-td {
   width:80%;
 }
 .progress-container {
   flex-grow: 1;
-  height: 0.7em;
+  /* height: 0.7em; */
   background-color: white;
   border-radius: 3px;
   overflow: hidden;
@@ -160,8 +168,14 @@ padding: 0 3em;
   background-color: #2ed573;
 }
 
+.playlist-header {
+  text-align: center;
+  font-size:1.2em;
+  padding:3em 0 0.5em 0;
+}
 #playList {
-  table-layout: fixed;
+  height: 100%;
+  /* table-layout: fixed; */
      border-collapse: collapse;
     border-spacing: 0 1em;
     margin:auto;
@@ -172,7 +186,8 @@ padding: 0 3em;
 
 #playList tr {
     border-bottom: 1px solid var(--accent-color);;
-    height:3em;
+    /* height:2em; */
+    /* height: minmax(0, 1em); */
 }
 
 #playList  td {
@@ -197,7 +212,7 @@ padding: 0 3em;
 
   display:flex;
   flex-direction: row;
-
+  column-gap:2em;
 
    /* position: relative; */
 }
