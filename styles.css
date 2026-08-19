@@ -216,10 +216,11 @@ body {
 }
 
 .custom-text {
-  font-family: 'Arial', sans-serif;
+  /* font-family: 'Arial', sans-serif; */
+  font-family: chalkboard;
   font-size: 40px;
   fill: white; /* Use 'fill' instead of 'color' for SVG text */
-  font-weight: bold;
+  font-weight:600;
    /* text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.6);  */
       text-shadow: 3px 3px 4px rgba(153, 72, 69, 0.6); 
    letter-spacing: -0.03em;

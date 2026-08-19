@@ -27,6 +27,9 @@ body {
     position: relative;
 }   
 
+.header {
+  height:3%;
+}
 .main-container {
   display: flex;
   flex-wrap: wrap; 
@@ -76,10 +79,10 @@ img.hero {
 .caption {
 
    filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.6)); 
-    width: 100%; /* Or whatever percentage your layout uses */
+
   display: block;
 
-  background-color: #e29a2dbb;
+  /* background-color: #e29a2dbb; */
   position: absolute;
  /* font-size: 4.5cqw; */
 
@@ -91,15 +94,16 @@ img.hero {
   
   /* height: 100%;  */
   z-index: 500;
- top: 0px;
+ /* top: 0px; */
   /* left: 60px; */
-  left:0;
+  /* left:0; */
   right: 0;
   bottom: 0;
 
-  top:7%;
-  left:13%;
-  width: 60%;
+  top:0;
+  left:4%;
+  width: 75%;
+  height:auto;
    /* aspect-ratio: 420 / 250; */
 
 }
@@ -125,25 +129,30 @@ img.hero {
     position:absolute;
     display:flex;
     flex-direction: column;
+
     justify-content: space-between;
 
     top:55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width:90%;
-    height:170px;
+    /* height:170px; */
      /* width:80%; */
     /* bottom:-40px; */
-    right:0;
+    /* right:0; */
      text-align: left;
       /* font-size:28px; */
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-weight: 300;
+
+      
   }
  
 
 
 .description1 {
   /* width: 100%; */
-text-align: center;
+/* text-align: center; */
   /* flex:1; */
 /* padding-bottom: 150px; */
   /* padding: 15px; */
@@ -153,7 +162,7 @@ text-align: center;
   /* margin-bottom:100px; */
 }
 .description2 {
-  text-align: left;
+  /* text-align: left; */
    /* width: 100%; */
   /* display: inline-block; */
  
