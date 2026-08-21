@@ -10,17 +10,16 @@
 
 
 body {
- display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100%;
+ /* display: flex; */
+ /* flex-direction: row; */
+  /* justify-content: center; */
+  /* align-items: center; */
   min-height: 100vh;
   margin: 0;
   /* font-family: Menlo, Monaco, 'Courier New', monospace; */
 font-family: arial;
-  background-color: #45464F;
-  background-image: linear-gradient(var(--gradient-color), var(--primary-color));
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+
 }
 
   @media (orientation: portrait) {
@@ -38,16 +37,21 @@ font-family: arial;
 
   }
 
-.main-container {
+.top-container {
    /* max-width: 100%; */
-  
+  /* width:100%; */
+  width: 100vw;
  display: inline-block;
   aspect-ratio: 1733 / 1375;
-
+   background-color: #45464F;
+  background-image: linear-gradient(var(--gradient-color), var(--primary-color));
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .hero-wrapper {
  position: relative;
+
    
 }
 
@@ -55,9 +59,8 @@ img.hero {
   display: block;
   width: 100%;
   height: auto; /* Keeps the aspect ratio perfectly intact */
-  max-height: 100vh;
-  object-fit: contain;
- 
+  max-height: 100vh; 
+  object-fit:contain;
   mask-composite: intersect;
   mask-image: linear-gradient(to top, transparent, black 20%, black 80%, transparent),
   linear-gradient(to right, transparent, black 20%, black 80%, transparent);
@@ -68,16 +71,24 @@ img.hero {
 }
 
 img.caption {
-    display: block;
+
+  display: block;
   width: 60%;
   height: auto; /* Keeps the aspect ratio perfectly intact */
   max-height: 100vh;
-  object-fit: contain;
+   object-fit:contain;
   z-index: 2;
   position: absolute;
    top: 4%;       /* Distance from the top of the container */
   left: 12%;
  
+}
+
+.bottom-container {
+   background-color: #45464F;
+  background-image: linear-gradient(var(--primary-color), var(--gradient-color));
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 .description-wrapper {
   margin: 0 auto;
@@ -90,9 +101,9 @@ img.caption {
 
   display: inline-block;
   /* margin-top:-10%; */
-  background-color:#e29a2d;
+  /* background-color:##70717b; */
   color: white;
-  /* font-size: 1.5rem; */
+  font-size: 1.5rem;
   /* width:100%; */
   /* height:100%;
     mask-composite: intersect;
