@@ -20,9 +20,10 @@ body {
     background-image: linear-gradient(var(--gradient-color), var(--primary-color));
      background-attachment: fixed;
     background-repeat: no-repeat;
-    width:100vw;
+    /* width:100vw; */
+    width: 100%;
     height:100vh;
-
+  
     font-family: Menlo, Monaco, 'Courier New', monospace;
     position: relative;
 
@@ -47,16 +48,7 @@ min-height: 100vh;  */
   min-height: 100vh;
 
 }
-.top-row {
 
-    display: flex;
-  flex-direction:  row;
-  align-items: start;
-   aspect-ratio: 4 / 1;
-   width: 100%;
-
-   /* border:1px sol  id   white; */
-}
 
 img.hero {
   position:absolute;
@@ -81,21 +73,64 @@ img.hero {
   }
 
   @media (orientation: portrait) {
+
+    .main-container {
+      position: fixed;;
+    }
+    .top-row {
+
+      /* display: flex; */
+      /* flex-direction:  row;
+      flex-wrap: wrap; */
+      /* align-items: start; */
+      width: 100%;
+
+      /* border:1px sol  id   white; */
+    }
+
    .hero-wrapper {
     width:100%;
-    position: relative;
+    height:100%;
+     /* flex:1; */
+    /* position: relative; */
+  }
+
+  img.hero {
+    position:fixed;
+      width: 100%;
+    height: auto;
+    /* object-fit: cover;  */
+    /* overflow: visible; */
+  }
+  .playlist-wrapper {
+    flex:1;
+    width:100%;
+    padding: 0 3em;
+      font-size: 1.5vw;  
   }
 
   .description-wrapper {
-    position: relative;
+    /* position: relative;
      text-align: left;
       font-size: 1.5rem;
-      font-weight: 300;
+      font-weight: 300; */
+
+
   }
 }
 
 
 @media (orientation: landscape) {
+  .top-row {
+
+    display: flex;
+  flex-direction:  row;
+  align-items: start;
+   width: 100%;
+
+   /* border:1px sol  id   white; */
+}
+
    .hero-wrapper {
     flex:1;
     width:55%;
@@ -104,7 +139,13 @@ img.hero {
     /* aspect-ratio: 1733 / 1110; */
     min-height: 0; 
   }
-
+  .playlist-wrapper {
+    
+    flex:1;
+    padding: 0 3em;
+      font-size: 1.5vw;  
+      /* font-size: clamp(1rem, 1.5vw, 3rem); */
+  }
   .description-wrapper {
      position: relative;
     flex:1;
@@ -132,11 +173,7 @@ img.hero {
  
 }
 
-  .playlist-wrapper {
-    flex:1;
-    padding: 0 3em;
-      font-size: 1.5vw;  
-  }
+
 
   .player-btn {
     padding: 0 0.7em 0.2em 0.7em;
