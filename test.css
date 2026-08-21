@@ -32,7 +32,7 @@ font-family: arial;
 
 }
 
-.hero-wrapper {
+.top-wrapper {
  position: relative;
    
 }
@@ -65,7 +65,7 @@ img.caption {
   left: 12%;
  
 }
-.description-wrapper {
+.bottom-wrapper {
   margin: 0 auto;
   /* width:70%; */
   /* width:500px; */
