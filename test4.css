@@ -1,0 +1,124 @@
+/* * {
+  border: 1px solid red !important;
+} */
+
+:root {
+  --ratio-w: 1733;
+  --ratio-h: 1375;
+  --bottom-overlap-percent:55;
+  --header-height:10vh;
+
+  --primary-color: #e29a2d;
+  --gradient-color: #70717b;
+
+  --primary-color-semi-opaque: #493c6bcc;
+  /* --gradient-color-semi-opaque: #70717bcc; */
+    --gradient-color-semi-opaque: #70717b;
+  --shadow-color: hsl(234, 72%, 34%);
+}
+html {
+    height:100%;  
+}
+body {
+  margin: 0;
+  margin:0;
+  padding:0;
+
+  height:100%;
+   /* background-image: linear-gradient(to top, var(--gradient-color) 30% , var(--primary-color) 70%); */
+    background-size: cover;
+  background-repeat: no-repeat;
+  /* background-color: var(--primary-color); */
+
+  background-image: linear-gradient(to right, var(--gradient-color-semi-opaque) 0%, 
+  #e29a2d 50%, var(--gradient-color-semi-opaque) 100%);
+
+  /* background-image: linear-gradient(to right, blue 0%, 
+   red 50%, blue 100%); */
+ 
+  /* align-items:  center; */
+
+}
+
+.content-wrapper {
+   display: flex;
+  justify-content: center;
+  flex-direction: column;
+margin: 0 auto;
+  /* width: 85%;   */
+  /* width:100%; */
+   /* width:calc(100vh * var(--ratio-w)/var(--ratio-h)); */
+  /* height: 100vh;  */
+ /* width:calc(100vh * var(--ratio-w)/var(--ratio-h)); */
+     width:calc((100vh - var(--header-height)) * var(--ratio-w)/var(--ratio-h));
+}
+
+h1.header {
+  margin:0;
+  width:100%;
+  height:var(--header-height);
+  font-size: 2.5rem;
+  color:white;
+  text-align: center;
+
+}
+.hero-wrapper {
+   /* width:calc(100vh * var(--ratio-w)/var(--ratio-h)); */
+  /* height: 100vh; */
+  width:100%;
+  height:calc(100vh - var(--header-height));
+  object-fit: contain;
+}
+
+img.hero {
+  height:calc(100vh - var(--header-height));
+   /* width: 100%; */
+  /* height: auto; */
+  display: block;
+
+  /* object-fit: contain;
+  display: block */
+}
+
+.caption {
+ 
+}
+/* img.caption {
+  display: block;
+  width: 40%;
+  height: auto;
+  max-height: 100vh;
+  object-fit: contain;
+  z-index: 2;
+  position: absolute;
+  top: 4%;    
+  left: 23%;
+ 
+
+} */
+
+.description-wrapper {
+
+  color:white;
+  font-size: 2em;
+  /* width:calc(100vh * var(--ratio-w)/var(--ratio-h)); */
+  /* min-height: calc(100vh * var(--bottom-overlap-percent) / 100); */
+
+  display: flex;  
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.about-us {
+  width: 50%;
+  height: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  box-sizing: border-box; 
+  background-color: #e29a2dcc ;
+
+
+.description {
+  width: 100%;
+  align-self: flex-start; 
+}
