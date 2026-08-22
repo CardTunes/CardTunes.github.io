@@ -1,29 +1,49 @@
-* {
+/* * {
   border: 1px solid red !important;
-}
+} */
 
 :root {
   --ratio-w: 1733;
   --ratio-h: 1375;
-  --bottom-overlap-percent:30;
+  --bottom-overlap-percent:55;
+  --primary-color: #e29a2d;
+  --gradient-color: #70717b;
+
+  --primary-color-semi-opaque: #493c6bcc;
+  /* --gradient-color-semi-opaque: #70717bcc; */
+    --gradient-color-semi-opaque: #70717b;
+  --shadow-color: hsl(234, 72%, 34%);
 }
 
 body {
   margin: 0;
+   /* background-image: linear-gradient(to top, var(--gradient-color) 30% , var(--primary-color) 70%); */
+    background-size: cover;
+  background-repeat: no-repeat;
+  /* background-color: var(--primary-color); */
+
+  background-image: linear-gradient(to right, var(--gradient-color-semi-opaque) 0%, 
+  #e29a2d 50%, var(--gradient-color-semi-opaque) 100%);
+
+  /* background-image: linear-gradient(to right, blue 0%, 
+   red 50%, blue 100%); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.top-content {
-  height: 100vh; 
-  background-color: #3498db;
+.content-wrapper {
+  /* width:100%; */
+   width:calc(100vh * var(--ratio-w)/var(--ratio-h));
+  /* height: 100vh;  */
 
   
 }
 
 .hero-wrapper {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+   /* width:calc(100vh * var(--ratio-w)/var(--ratio-h)); */
+  /* height: 100vh; */
+
 }
 
 img.hero {
@@ -31,17 +51,43 @@ img.hero {
   object-fit: contain;
 }
 
-.bottom-content {
-  margin-top:calc(-1vh * var(--bottom-overlap-percent));
-  height: 100%; 
-  background-color: #2ecc71;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+img.caption {
+  display: block;
+  width: 40%;
+  height: auto;
+  max-height: 100vh;
+  object-fit: contain;
+  z-index: 2;
+  position: absolute;
+  top: 4%;    
+  left: 23%;
+ 
 }
 
 .description-wrapper {
-  background-color:white;
-  width:calc(100vh * var(--ratio-w)/var(--ratio-h));
-  min-height: calc(100vh * var(--bottom-overlap-percent) / 100);
+  margin-top:calc(-1vh * var(--bottom-overlap-percent));
+
+  color:white;
+  font-size: 2em;
+  /* width:calc(100vh * var(--ratio-w)/var(--ratio-h)); */
+  /* min-height: calc(100vh * var(--bottom-overlap-percent) / 100); */
+
+  display: flex;  
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.about-us {
+  width: 50%;
+  height: auto;
+  /* text-align: right; */
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  box-sizing: border-box; 
+}
+
+.description {
+  width: 100%;
+  align-self: flex-start; 
 }
