@@ -40,9 +40,12 @@ songList.push(new Song("Unrequited", "Unrequited.mp3"));
 songList.push(new Song("I Mean You", "I Mean You.mp3"));
 songList.push(new Song("Infant Eyes", "Infant Eyes.mp3"));
 
-const addButton = (song, audio) => {
+const addButton = (row, audio) => {
+    const div = document.createElement('div');
+    row.appendChild(div);
+
     const button = document.createElement('button');
-    container.appendChild(button);
+    div.appendChild(button);
     
     button.innerHTML = "▶&#xFE0E;";  
 
@@ -79,20 +82,24 @@ const formatDuration = (audioElement) => {
 songList.forEach(song => {
     const audio = new Audio(song.url);
 
+    const row = document.createElement('div');
+    container.appendChild(row);
+    row.classList.add('song-row');
+
     const counter = document.createElement('div');
     counter.textContent = index;
-    container.appendChild(counter);
+    row.appendChild(counter);
 
-    addButton(song, audio);
+    addButton(row, audio);
     
     const label = document.createElement('div');
     label.textContent = song.label;
     label.classList.add('song-title');
-    container.appendChild(label);
+    row.appendChild(label);
 
     const progressContainer = document.createElement('div');
     progressContainer.classList.add('progress-container');
-    container.appendChild(progressContainer);
+    row.appendChild(progressContainer);
 
     const progressBar = document.createElement('div');
     progressBar.classList.add('progress-fill');
@@ -105,7 +112,7 @@ songList.forEach(song => {
 
      const time = document.createElement('div');
      time.classList.add('song-time');
-     container.appendChild(time);
+     row.appendChild(time);
 
     audio.addEventListener('loadedmetadata', () => {
         time.textContent = formatDuration(audio);
