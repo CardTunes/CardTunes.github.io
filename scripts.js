@@ -40,109 +40,32 @@ songList.push(new Song("Unrequited", "Unrequited.mp3"));
 songList.push(new Song("I Mean You", "I Mean You.mp3"));
 songList.push(new Song("Infant Eyes", "Infant Eyes.mp3"));
 
+const addButton = (row, audio) => {
+    const div = document.createElement('div');
+    row.appendChild(div);
 
-
-
-// const addButton = (container, song, audio) => {
-//     const button = document.createElement('playButton');
-//     container.appendChild(button);
+    const button = document.createElement('button');
+    div.appendChild(button);
     
-//   //  const audio = new Audio(song.url);
-//     button.innerHTML = "▶";  
-
-//     button.classList.add('player-btn');
-//     button.addEventListener('click', () => {
-       
-//         if(audio.paused) {
-//             audio.play();
-//             button.innerHTML = "⏸";            
-//         }
-//         else {
-//             audio.pause();
-//             button.innerHTML = "▶";            
-//         }
-//     });
-
-
-
-// };
-
-
-const addTd = (tr, element, width) => {
-    const td = document.createElement('td');
-   
-    td.appendChild(element);
-    tr.appendChild(td);
-
-    if (width !== undefined) {
-          td.style.width = width;
-    }
-   return td;
-}
-
-const addButton = (tr, song, audio) => {
-    //const td = document.createElement('td');
-   //  tr.appendChild(td);
-
-    const button = document.createElement('playButton');
-    addTd(tr, button);
-   // td.appendChild(button);
-    
-    button.innerHTML = "▶";  
+    button.innerHTML = "▶&#xFE0E;";  
 
     button.classList.add('player-btn');
     button.addEventListener('click', () => {
        
         if(audio.paused) {
             audio.play();
-            button.innerHTML = "⏸";            
+            button.innerHTML = "⏸&#xFE0E";            
         }
         else {
             audio.pause();
-            button.innerHTML = "▶";            
+            button.innerHTML = "▶&#xFE0E";            
         }
     });
 
 };
 
 var index = 1;
-const container = document.getElementById('playList');
-// songList.forEach(song => {
-//     const audio = new Audio(song.url);
-
-//     const counter = document.createElement('span');
-//     counter.textContent = index;
-//     container.appendChild(counter);
-
-//     addButton(container, song, audio);
-    
-//     const span = document.createElement('span');
-//     span.textContent = song.label;
-//     container.appendChild(span);
-
-//     const progressContainer = document.createElement('div');
-//     progressContainer.classList.add('progress-container');
-//     container.appendChild(progressContainer);
-//     const progressBar = document.createElement('div');
-//     progressBar.classList.add('progress-fill');
-//     progressContainer.appendChild(progressBar);
-
-   
-
-//     audio.addEventListener('timeupdate', () => {
-//         const percentage = (audio.currentTime / audio.duration) * 100;
-//         progressBar.style.width = percentage + '%';
-//     });
-
-//     // audio.addEventListener('loadedmetadata', () => {
-//     //     const time = document.createElement('span');
-//     //     time.textContent = audio.duration;
-//     //     container.appendChild(time);
-//     //   //  console.log("Audio duration:", audio.duration); // Returns the actual duration in seconds
-//     // });
-
-//     index = index + 1;
-// });
+const container = document.getElementById('recordings');
 
 const formatDuration = (audioElement) => {
   if (isNaN(audioElement.duration)) return "00:00";
@@ -156,59 +79,44 @@ const formatDuration = (audioElement) => {
   return `${paddedMinutes}:${paddedSeconds}`;
 };
 
-
 songList.forEach(song => {
     const audio = new Audio(song.url);
 
-    const row = document.createElement("tr");
+    const row = document.createElement('div');
     container.appendChild(row);
+    row.classList.add('song-row');
 
-    // const leftSpan =  document.createElement('span');
-    // addTd(row, leftSpan, "50%");
-
-    const counter = document.createElement('span');
-    addTd(row, counter);
+    const counter = document.createElement('div');
     counter.textContent = index;
+    row.appendChild(counter);
 
-
-    addButton(row, song, audio);
+    addButton(row, audio);
     
-    const label = document.createElement('span');
+    const label = document.createElement('div');
     label.textContent = song.label;
     label.classList.add('song-title');
-
-    addTd(row, label);
+    row.appendChild(label);
 
     const progressContainer = document.createElement('div');
     progressContainer.classList.add('progress-container');
-    progressTd = addTd(row, progressContainer);
-    progressTd.classList.add('progress-td');
-
+    row.appendChild(progressContainer);
 
     const progressBar = document.createElement('div');
     progressBar.classList.add('progress-fill');
-     progressContainer.appendChild(progressBar);
-
-    // const rightSpan =  document.createElement('span');
-    // addTd(row, rightSpan, "50%");
+    progressContainer.appendChild(progressBar);
 
     audio.addEventListener('timeupdate', () => {
         const percentage = (audio.currentTime / audio.duration) * 100;
         progressBar.style.width = percentage + '%';
     });
 
-    // const emptySpan2 =  document.createElement('span');
-    // addTd(row, emptySpan2, "10px");
-
-     const time = document.createElement('span');
+     const time = document.createElement('div');
      time.classList.add('song-time');
-     addTd(row, time);
+     row.appendChild(time);
 
     audio.addEventListener('loadedmetadata', () => {
         time.textContent = formatDuration(audio);
-        //const time = document.createElement('span');
-
-      //  console.log("Audio duration:", audio.duration); // Returns the actual duration in seconds
+  
     });
 
     index = index + 1;

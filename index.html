@@ -6,110 +6,63 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Card-Hopper-Smith</title>
 
-        <!-- This line connects your CSS file -->
-         <link href="https://googleapis.com" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://gstatic.com" crossorigin>
-        <link href="https://googleapis.com" rel="stylesheet">
-
-        <link rel="stylesheet" href="styles.css">
-        <script src="scripts.js" defer></script>
-
-     
+        <link rel="stylesheet" href="test3.css">
+         <script src="scripts.js" defer></script>
     </head>
     <body>
-        <div class="header">
-            <nav class="top-nav">
-                <ul>
-                    <li><a href="" class="active">Contact us</a></li>
-                        
-                </ul>
-            </nav>
+
+        <div class="content-wrapper">
+            <div class="header" >
+                  <img src="title-charter.png" >  
+                <!-- Card-Hopper-Smith                 -->
+            </div>
+        
+            <div class="middle">
+                <div class="hero-wrapper">
+                  
+                    <img class="hero" src="issaquah trio jam.png" >  
+                    
+                 </div>
+                 
+                 <div class="description-wrapper">
+                   <div class="players-wrapper">
+                        <div>
+                            <span class="instrument">Bass:</span>
+                            <span class="player">Matt Hopper</span>
+                        </div>
+                        <div>
+                            <span class="instrument">Drums:</span>
+                            <span class="player">Mark Smith</span>
+                        </div>
+                        <div>
+                            <span class="instrument">Keyboards:</span>
+                            <span class="player">Dave Card</span>
+                        </div>
+                    </div> 
+                                       
+                    <div class="about-us">
+                        <p>Seattle based jazz trio playing together for over 20 years.</p>
+                    </div>
+                    <div class="description">
+                        <p>
+                            Focused on mostly jazz standards in an interactive improvisational format with 
+                            many styles including swing, Latin, and contemporary.  
+                        </p>
+                    </div> 
+                    <div class="bottom"> 
+                        <div class="recordings-header">Recordings</div> 
+                        <div id="recordings"></div>                     
+                    </div>                                   
+                </div> 
+
+            </div>
+
         </div>
-        <div class="main flex-container">
-            <div class="image-wrapper">
-                <!-- <div class="top-left-cover">
-
-                </div> -->
-                <div class="caption">
-                    <!-- <H1>
-                        Card-Hopper-Smith
-                    </H1> -->
-                    <svg viewBox="0 0 180 70" class="curved-text-container">
-                        <!-- 1. Define the curve -->
-                        <path id="textCurve" fill="none" stroke="none" d="M 50,150 Q 250,50 450,150" />
-                        
-                        <!-- 2. Apply the text -->
-                        <text  dominant-baseline="middle" >
-                            <!-- 3. Bind text to the path ID -->
-                            <textPath href="#textCurve" startOffset="50%" text-anchor="middle" class="custom-text">
-                            Card-Hopper-Smith
-                            </textPath>
-                        </text>
-                    </svg>                    
-                </div>
-
-                 <img src="trio monochrome gold 2.png" >
-
-            </div>
-
-            <div class="playlist-wrapper">
-                 <table id="playList"></table>
-           
-            </div>
-
-            <div class="description-wrapper">
-                <div class="description1">
-                    <div class="description-text">
-                     A jazz-oriented trio playing together for over 20 years.   
-                    </div>
-                 
-                 </div>
-                <div class="description2">
-                    <div class="description-text">
-                    Focused on mostly jazz standards in an interactive improvisational format with 
-                    many styles including swing, Latin, and contemporary. 
-                    </div>
-                 
-                 </div>
-            </div>
-
-            <div class="players-wrapper">
-                <div>
-                    <span class="instrument">Bass:</span>
-                    <span class="player">Matt Hopper</span>
-                </div>
-                   <div>
-                    <span class="instrument">Drums:</span>
-                    <span class="player">Mark Smith</span>
-                </div>
-                   <div>
-                    <span class="instrument">Keyboards:</span>
-                    <span class="player">Dave Card</span>
-                </div>
-            </div>
-
-            </div>
           
-        </div>
+
+
+
       
+    </body>
 
-        <!-- <div class="hero">
-           
-        </div>
-            -->
-
-    
-            <!-- <div class="about">
-                
-                <div class="description">
-                    <div class="sub-header"></div>
-                    The smaller format allows for the emphasis on closer 
-                    listening and interactivity between the players and the ability 
-                    to stretch out in arrangements and solos. We are interested in live venues 
-                    that welcome jazz instrumental music. 
-                </div>
-            </div> -->
-    
-     
 </html>
